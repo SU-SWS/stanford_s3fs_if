@@ -1,0 +1,34 @@
+<?php
+/**
+* @file
+* Replaces paths to S3 bucket with a callback to the s3fs module.
+*/
+
+/**
+ * Implements hook_filter_info().
+ */
+function stanford_s3fs_if_filter_info() {
+  $filters['s3fs_generate_derivatives'] = array (
+    'title' => t('S3FS Replacement'),
+    'description' => t('Replace URLs of the style http://path-to-s3-bucket.region.amazonaws.com with "/s3/files/styles"'),
+    'process callback' => '_stanford_s3fs_if_s3fs_generate_derivatives_process',
+    'settings callback' => '_stanford_s3fs_if_s3fs_generate_derivatives_settings',
+    'tips callback' => '_stanford_s3fs_if_s3fs_generate_derivatives_tips',
+    'cache' => FALSE,
+  );
+  return $filters;
+}
+
+function _stanford_s3fs_if_s3fs_generate_derivatives_process($text, $filter, $format) {
+  $bucket = variable_get('s3fs_bucket');
+  $region = variable_get('s3fs_region');
+  $s = '';
+  if (variable_get('s3fs_use_https') === 1) {
+    $s = 's';
+  }
+  $search = 'http' . $s . "//" . $bucket . "." . $region . ".amazonaws.com/s3fs-public/";
+  $replace = '/s3/files/';
+  dpm($search);
+  dpm($replace);
+  return str_replace($search, $replace, $text);
+}
