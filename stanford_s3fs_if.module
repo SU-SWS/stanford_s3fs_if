@@ -27,7 +27,7 @@ function _stanford_s3fs_if_s3fs_generate_derivatives_process($text, $filter, $fo
   if (variable_get('s3fs_use_https') === 1) {
     $s = 's';
   }
-  $search = 'http' . $s . "://" . $bucket . "." . $region . ".amazonaws.com/s3fs-public/";
+  $search = 'http' . $s . "://" . $bucket . ".s3-" . $region . ".amazonaws.com/s3fs-public/";
 //  $search = 'https://files-sws-build-drupal-anchorage-stanford-edu.s3-us-west-2.amazonaws.com/s3fs-public/';
   $replace = '/s3/files/';
   // TODO: remove this logging.
