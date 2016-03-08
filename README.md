@@ -15,7 +15,7 @@ into:
 
 The reason for doing this is to get around a conflict between the [Insert](https://drupal.org/project/insert) module and the [S3FS ](https://drupal.org/project/s3fs) module, whereby Insert will use the direct path to an image derivative on S3 in a WYSIWYG field if the asset exists. If that asset later disappears for some reason (e.g., `drush image-flush --all`), broken image links in WYSIWYG fields result.
 
-See [this issue in the s3fs module's issue queue](https://www.drupal.org/node/2339067) for more information.
+See [this issue](https://www.drupal.org/node/2663674) and [this issue in the s3fs module's issue queue](https://www.drupal.org/node/2339067) for more information.
 
 Caveats
 ---
