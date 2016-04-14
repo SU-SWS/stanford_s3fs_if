@@ -1,5 +1,4 @@
 name = Stanford S3FS Insert Filter
 description = Token replacement for S3FS URLs and the Insert module.
 core = 7.x
-; version = 7.x-1.x
-version = 7.x-ANCH-68
+version = 7.x-1.x
