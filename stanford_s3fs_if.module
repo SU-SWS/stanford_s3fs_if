@@ -14,8 +14,6 @@ function stanford_s3fs_if_filter_info() {
     'process callback' => '_stanford_s3fs_if_s3fs_generate_derivatives_process',
     'settings callback' => '_stanford_s3fs_if_s3fs_generate_derivatives_settings',
     'tips callback' => '_stanford_s3fs_if_s3fs_generate_derivatives_tips',
-    // TODO: remove this.
-    'cache' => FALSE,
   );
   return $filters;
 }
@@ -30,8 +28,8 @@ function _stanford_s3fs_if_s3fs_generate_derivatives_process($text, $filter, $fo
   $search = 'http' . $s . "://" . $bucket . ".s3-" . $region . ".amazonaws.com/s3fs-public/";
 //  $search = 'https://files-sws-build-drupal-anchorage-stanford-edu.s3-us-west-2.amazonaws.com/s3fs-public/';
   $replace = '/s3/files/';
-  // TODO: remove this logging.
-  watchdog('stanford_s3fs_if',"Search string is: @search", array('@search' => $search));
-  watchdog('stanford_s3fs_if',"Replace string is: @replace", array('@replace' => $replace));
+//  Uncomment lines below to re-enable logging.
+//  watchdog('stanford_s3fs_if',"Search string is: @search", array('@search' => $search));
+//  watchdog('stanford_s3fs_if',"Replace string is: @replace", array('@replace' => $replace));
   return str_replace($search, $replace, $text);
 }
