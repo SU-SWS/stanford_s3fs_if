@@ -1,5 +1,5 @@
 #[Stanford S3FS Insert Filter](https://github.com/SU-SWS/stanford_s3fs_if)
-##### Version: 7.x-1.x-dev
+##### Version: 7.x-1.0
 
 Maintainers: [jbickar](https://github.com/jbickar), [sherakama](https://github.com/sherakama), [boznik](https://github.com/boznik)
 

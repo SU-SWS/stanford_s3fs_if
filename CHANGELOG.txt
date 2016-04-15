@@ -1,2 +1,6 @@
 Stanford S3FS Insert Filter x.x-x.x xxxx-xx-xx
 ----------------------------------------------
+
+Stanford S3FS Insert Filter 7.x-1.0 2016-04-15
+----------------------------------------------
+Initial stable release.
